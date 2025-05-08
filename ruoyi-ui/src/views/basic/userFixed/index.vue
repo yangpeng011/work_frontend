@@ -165,7 +165,7 @@
 
 <script>
 import { listUserFixed, getUserFixed, delUserFixed, addUserFixed, updateUserFixed } from "@/api/basic/userFixed";
-import {listUser} from "@/api/system/user";
+import {selectList} from "@/api/system/user";
 import {listTaskConfig} from "@/api/basic/taskConfig";
 
 export default {
@@ -384,8 +384,8 @@ export default {
         pageNum: 1,
         pageSize: 200,
       }
-      listUser(queryParams).then(response => {
-          this.receiverOptions = response.rows;
+      selectList(queryParams).then(response => {
+          this.receiverOptions = response.data;
         }
       );
     },
